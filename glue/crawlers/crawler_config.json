@@ -1,0 +1,16 @@
+{
+  "Name": "sales-s3-crawler",
+  "Role": "AWSGlueServiceRole",
+  "DatabaseName": "sales_catalog",
+  "Targets": {
+    "S3Targets": [
+      {
+        "Path": "s3://raw-sales-data-bucket/sales/"
+      }
+    ]
+  },
+  "SchemaChangePolicy": {
+    "UpdateBehavior": "UPDATE_IN_DATABASE",
+    "DeleteBehavior": "DEPRECATE_IN_DATABASE"
+  }
+}
